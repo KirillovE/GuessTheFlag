@@ -28,12 +28,18 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.blue.ignoresSafeArea()
+            LinearGradient(
+                gradient: Gradient(colors: [.blue, .black]),
+                startPoint: .top,
+                endPoint: .bottom
+            ).ignoresSafeArea()
             
             VStack(spacing: 30) {
                 VStack {
                     Text("Tap the flag of...")
                     Text(countries[correctAnswer])
+                        .font(.largeTitle)
+                        .fontWeight(.black)
                 }
                 .foregroundColor(.white)
                 
@@ -44,6 +50,9 @@ struct ContentView: View {
                         Image(self.countries[number])
                             .renderingMode(.original)
                     }
+                    .clipShape(Capsule())
+                    .shadow(color: .black, radius: 10)
+                    
                 }
                 
                 Spacer()
@@ -75,5 +84,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
     }
 }

@@ -35,6 +35,8 @@ struct ContentView: View {
             ).ignoresSafeArea()
             
             VStack(spacing: 30) {
+                Spacer()
+                
                 VStack {
                     Text("Tap the flag of...")
                     Text(countries[correctAnswer])
@@ -51,7 +53,7 @@ struct ContentView: View {
                             .renderingMode(.original)
                     }
                     .clipShape(Capsule())
-                    .shadow(color: .black, radius: 10)
+                    .shadow(color: .primary, radius: 10)
                     
                 }
                 

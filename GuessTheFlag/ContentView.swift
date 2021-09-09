@@ -29,7 +29,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                gradient: Gradient(colors: [.blue, .black]),
+                gradient: Gradient(colors: [.clear, .accentColor]),
                 startPoint: .top,
                 endPoint: .bottom
             ).ignoresSafeArea()
@@ -41,7 +41,7 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .fontWeight(.black)
                 }
-                .foregroundColor(.white)
+                .foregroundColor(.primary)
                 
                 ForEach(0 ..< 3) { number in
                     Button {
@@ -84,6 +84,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            
     }
 }

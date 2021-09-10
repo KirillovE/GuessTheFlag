@@ -44,7 +44,6 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .fontWeight(.black)
                 }
-                .foregroundColor(.primary)
                 
                 ForEach(0 ..< 3) { number in
                     Button {
@@ -58,8 +57,11 @@ struct ContentView: View {
                     
                 }
                 
+                Text("Current score is \(currentScore)")
+                
                 Spacer()
             }
+            .foregroundColor(.primary)
         }
         .alert(isPresented: $showingScore) {
             Alert(
@@ -90,5 +92,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }
